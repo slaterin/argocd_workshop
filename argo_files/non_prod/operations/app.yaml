@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: operations
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: false
+    path: operations
+    repoURL: https://github.com/slaterin/argocd_workshop
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: project-2
+  name: project100
 spec:
   finalizers:
   - kubernetes
